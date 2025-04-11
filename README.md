@@ -60,3 +60,5 @@ Join our community of developers creating universal apps.
 # INFO-670--React
 >>>>>>> 8acdc566e03058ad22693844dac7681dbc69c925
 >>>>>>> 775e10a9278c2d9c73a2cb36ae0d6a8b9b9cb684
+>>>>>>> ![image](https://github.com/user-attachments/assets/55179633-62b8-4c84-928a-ebc6ccc6ff5b)
+
