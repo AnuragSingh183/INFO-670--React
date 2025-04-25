@@ -1,64 +1,32 @@
-<<<<<<< HEAD
-# INFO-670--React
+# My To-Do List App
 
-This is the GitHub repo for INFO 670 Assignment 1.
+This React Native app was built for INFO 670 Assignment 2. It allows users to manage their tasks efficiently by adding and deleting to-do items.
 
-This app displays my full name using React Native and Expo.
-=======
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+ Features
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- Add a new task using the input field
+- Delete any task using the delete button
+- Basic error handling for empty inputs
+- Clean and responsive UI using flex layout
 
-## Get started
+ Technologies
 
-1. Install dependencies
+- React Native
+- Expo
+- JavaScript
 
-   ```bash
-   npm install
-   ```
+ How to Use
 
-2. Start the app
+1. Type your task in the input field.
+2. Press **ADD TASK** to add it to the list.
+3. Tap **Delete** to remove a task from the list.
 
-   ```bash
-    npx expo start
-   ```
+ Screenshots
+![alt text](image.png)
 
-In the output, you'll find options to open the app in a
+Screenshot after Deleting a task
+![alt text](image-1.png)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Author
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# INFO-670--React
->>>>>>> 8acdc566e03058ad22693844dac7681dbc69c925
->>>>>>> 775e10a9278c2d9c73a2cb36ae0d6a8b9b9cb684
->>>>>>> ![image](https://github.com/user-attachments/assets/55179633-62b8-4c84-928a-ebc6ccc6ff5b)
-
+Anurag Singh — Drexel University, INFO 670
