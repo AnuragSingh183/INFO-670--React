@@ -1,89 +1,57 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Gallery from './components/Gallery';
+import PictureViewer from './components/PictureViewer';
+import Profile from './components/Profile';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-const App = () => {
-  const [task, setTask] = useState('');
-  const [taskList, setTaskList] = useState([]);
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-  const addTask = () => {
-    if (task.trim() === '') {
-      return; 
-    }
-    setTaskList([...taskList, { id: Date.now().toString(), text: task }]);
-    setTask('');
-  };
-
-  const deleteTask = (id) => {
-    setTaskList(taskList.filter((item) => item.id !== id));
-  };
-
+function GalleryStack() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>My To-Do List</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter a task"
-        value={task}
-        onChangeText={setTask}
-      />
-      <Button title="Add Task" onPress={addTask} />
-      <FlatList
-        data={taskList}
-        renderItem={({ item }) => (
-          <View style={styles.taskContainer}>
-            <Text style={styles.taskItem}>{item.text}</Text>
-            <TouchableOpacity onPress={() => deleteTask(item.id)} style={styles.deleteButton}>
-              <Text style={styles.deleteButtonText}>Delete</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="GalleryMain" component={Gallery} options={{ title: 'Gallery' }} />
+      <Stack.Screen name="Viewer" component={PictureViewer} options={{ title: 'Picture Viewer' }} />
+    </Stack.Navigator>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#f5f5f5',
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 5,
-  },
-  taskContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 10,
-    marginVertical: 5,
-    borderRadius: 5,
-  },
-  taskItem: {
-    fontSize: 18,
-    flex: 1,
-  },
-  deleteButton: {
-    backgroundColor: '#ff4444',
-    padding: 5,
-    borderRadius: 5,
-  },
-  deleteButtonText: {
-    color: '#fff',
-    fontSize: 14,
-  },
-});
+export default function App() {
+  return (
+    <PaperProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ color, size }) => {
+              let iconName;
 
-export default App;
+              if (route.name === 'Gallery') {
+                iconName = 'image-album'; // gallery icon
+              } else if (route.name === 'Profile') {
+                iconName = 'account-circle'; // profile icon
+              }
+
+              return (
+                <MaterialCommunityIcons
+                  name={iconName}
+                  size={size}
+                  color={color}
+                />
+              );
+            },
+            tabBarActiveTintColor: '#2196F3',
+            tabBarInactiveTintColor: 'gray',
+            headerShown: false,
+          })}
+        >
+          <Tab.Screen name="Gallery" component={GalleryStack} />
+          <Tab.Screen name="Profile" component={Profile} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
+  );
+}
