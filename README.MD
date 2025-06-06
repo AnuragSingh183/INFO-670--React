@@ -25,6 +25,15 @@ This is a full-stack mobile application built with **React Native (Expo)** and a
 - **Database:** MongoDB Atlas (NoSQL)
 
 ---
+Screenshots-
+
+LogWorkout Screen-
+![alt text](image.png)
+
+ViewWorkout Screen-
+![alt text](image-1.png)
+
+![alt text](image-2.png)
 
 ##  API Endpoints
 
@@ -55,15 +64,6 @@ npm install
 npx expo start
 
 
-Screenshots-
-
-LogWorkout Screen-
-![alt text](image.png)
-
-ViewWorkout Screen-
-![alt text](image-1.png)
-
-![alt text](image-2.png)
 
 
 Database Schema: workouts Collection (MongoDB Atlas)
