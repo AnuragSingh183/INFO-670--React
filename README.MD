@@ -28,12 +28,12 @@ This is a full-stack mobile application built with **React Native (Expo)** and a
 Screenshots-
 
 LogWorkout Screen-
-![alt text](image.png)
+![alt text](image-1.png)
 
 ViewWorkout Screen-
 ![alt text](image.png)
 
-![alt text](image-2.png)
+
 
 ##  API Endpoints
 
